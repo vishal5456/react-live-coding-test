@@ -4,7 +4,7 @@
 
 .App-logo {
   height: 40vmin;
-  pointer-events: none;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,18 +14,117 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
+
 
 .App-link {
   color: #61dafb;
+}
+
+.listWrapper{
+  width: 50%;
+}
+
+.listItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.listName{
+  width: 14%;
+  text-align: left;
+}
+
+.headWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pokeName{
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: cornflowerblue;
+}
+
+.pokeImage{
+    border: 2px solid cornflowerblue;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.tableWrapper{
+  margin: 10px 0;
+}
+
+.statHead{
+    margin: 10px 0 ;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+.chartWrapper{
+  margin: 10px 0;
+}
+
+.download-button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.statTableWrapper{
+  margin: 10px 0;
+}
+
+.listItem:hover {
+  background-color: yellow;
+}
+
+.listItem:hover  .listName{
+  color: green;
+  transition-duration: 0.5s;
+  transform: scale(1.2);
+}
+
+.wrapper{
+  background-color: black;
+  padding: 10px;
+}
+
+.mPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px 20px 10px;
+}
+
+.input{
+  background-color: white;
+  border-radius: 10px;
+}
+
+.search{
+  background-color: white;
+  border-radius: 10px;
+  width: 50%;
+  margin: 20px 0;
 }
 
 @keyframes App-logo-spin {
