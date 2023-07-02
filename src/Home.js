@@ -1,10 +1,26 @@
 import "./App.css";
-import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import TextField from '@mui/material/TextField';
 
 function Home() {
+  const history = useHistory();
+
   const [text, setText] = useState("");
   const [isReady, setIsReady] = useState(false);
+
+  const handleChange = (e)=>{
+      if(e.target.value === 'Ready!'){
+        setIsReady(true)
+      }else{
+        setIsReady(false)
+      }
+      setText(e.target.value)
+  }
+
+  const handleClick = ()=>{
+      history.push('/pokedex')
+  }
 
   return (
     <div className="App">
@@ -15,15 +31,16 @@ function Home() {
           className="App-logo"
           alt="logo"
           style={{ padding: "10px" }}
+          onClick={handleClick}
         />
-        <b>
-          Requirement: Try to show the hidden image and make it clickable that
-          goes to /pokedex when the input below is "Ready!" remember to hide the
-          red text away when "Ready!" is in the textbox.
-        </b>
         <p>Are you ready to be a pokemon master?</p>
-        <input type="text" name="name" />
-        <span style={{ color: "red" }}>I am not ready yet!</span>
+        <div className="input">
+            <TextField id="outlined-basic" label="Get Ready" variant="outlined" type="text" name="name" value={text} onChange={handleChange}/>
+        </div>
+        {
+          !isReady &&
+          <span style={{ color: "red" }}>I am not ready yet!</span>
+        }
       </header>
     </div>
   );
